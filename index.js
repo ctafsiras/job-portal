@@ -22,3 +22,7 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`app listening on port ${port}`)
 })
+
+
+// MONGODB_URI=mongodb+srv://db:db@cluster0.dbyzuki.mongodb.net/JobPortal
+// JWT_SECRET=9ca60ddd3dea30eb61567d2e591eafada3f83866823e9c12cb34c996fec088ea8d6029d706e0994b97ab58a3f5bd20386052e282d36015ef0d10c702c53c6af4
