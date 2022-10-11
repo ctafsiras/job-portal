@@ -1,5 +1,4 @@
-import mongoose from 'mongoose';
-import validator from 'validator';
+const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const jobSchema = new Schema({
@@ -16,14 +15,14 @@ const jobSchema = new Schema({
         trim: true,
         minLength: 3,
         maxLength: 15,
-        required: true
+        required: [true, "Please provide company name"]
     },
     location: {
         type: String,
         trim: true,
         minLength: 3,
         maxLength: 15,
-        required: true,
+        required: [true, "Please Provide location name"],
         lowercase: true,
     },
     jobType: {
@@ -31,7 +30,7 @@ const jobSchema = new Schema({
         trim: true,
         minLength: 3,
         maxLength: 15,
-        required: true,
+        required: [true, "Please give the job type"],
         lowercase: true,
     },
     salary: {
@@ -48,9 +47,9 @@ const jobSchema = new Schema({
             trim: true,
         }
     },
-    deadline:{
+    deadline: {
         type: Date,
-        required: true,
+        required: [true, "Please provide the deadline"],
     }
 },
     {

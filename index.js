@@ -13,7 +13,7 @@ app.use(cors());
 connectDB();
 
 app.use('/user', userRouter)
-app.use('/jobs', jobRouter)
+app.use('/', jobRouter)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
