@@ -2,14 +2,18 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const jobSchema = new Schema({
-    hiringManager: {
+    // _id: Schema.Types.ObjectId,
+    hiringManager:
+
+    {
         name: String,
         email: String,
-        id: {
+        _id: {
             type: Schema.Types.ObjectId,
             ref: 'User'
-        }
+        },
     },
+
     company: {
         type: String,
         trim: true,
@@ -50,7 +54,18 @@ const jobSchema = new Schema({
     deadline: {
         type: Date,
         required: [true, "Please provide the deadline"],
-    }
+    },
+    candidates: [
+        {
+            name: String,
+            email: String,
+            resume: String,
+            _id: {
+                type: Schema.Types.ObjectId,
+                ref: 'User'
+            }
+        }
+    ]
 },
     {
         timestamps: true

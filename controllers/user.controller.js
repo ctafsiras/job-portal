@@ -18,6 +18,7 @@ exports.signUpController = async (req, res) => {
         }
 
         const user = await signUpService(signUpInfo);
+        user.password = undefined;
         const token = generateToken(user);
         res.status(200).json({
             status: 'success',
